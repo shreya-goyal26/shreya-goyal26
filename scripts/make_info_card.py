@@ -1,0 +1,73 @@
+
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+output_path = BASE_DIR / "data" / "info-card.svg"
+
+svg = """
+<svg xmlns="http://www.w3.org/2000/svg"
+width="650" height="390" viewBox="0 0 650 390">
+
+<style>
+    .heading {
+        font: bold 23px monospace;
+        fill: #58a6ff;
+    }
+
+    .label {
+        font: bold 14px monospace;
+        fill: #7ee787;
+    }
+
+    .value {
+        font: 14px monospace;
+        fill: #e6edf3;
+    }
+
+    .muted {
+        font: 12px monospace;
+        fill: #8b949e;
+    }
+</style>
+
+<rect width="650" height="390" rx="12" fill="#0d1117"
+stroke="#30363d"/>
+
+<circle cx="22" cy="22" r="6" fill="#ff5f56"/>
+<circle cx="43" cy="22" r="6" fill="#ffbd2e"/>
+<circle cx="64" cy="22" r="6" fill="#27c93f"/>
+
+<text x="90" y="27" class="muted">shreya@github: ~</text>
+
+<text x="30" y="80" class="heading">Shreya Goyal</text>
+
+<text x="30" y="112" class="label">ROLE</text>
+<text x="150" y="112" class="value">B.Tech CSE Student</text>
+
+<text x="30" y="145" class="label">COLLEGE</text>
+<text x="150" y="145" class="value">GL Bajaj Institute of Technology</text>
+
+<text x="30" y="178" class="label">FOCUS</text>
+<text x="150" y="178" class="value">Full-Stack Development &amp; DSA</text>
+
+<text x="30" y="220" class="label">TECH STACK</text>
+<text x="150" y="220" class="value">C++ | Python | Django</text>
+<text x="150" y="247" class="value">JavaScript | React | HTML | CSS</text>
+
+<text x="30" y="289" class="label">INTERESTS</text>
+<text x="150" y="289" class="value">Problem Solving | Web Development</text>
+
+<text x="30" y="340" class="muted">
+  Always learning. Always building. One commit at a time.
+</text>
+
+<text x="30" y="370" class="muted">
+  [ STATUS: OPEN TO LEARNING &amp; COLLABORATION ]
+</text>
+
+</svg>
+"""
+
+output_path.write_text(svg, encoding="utf-8")
+
+print(f"Information card created: {output_path}")
